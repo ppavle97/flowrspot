@@ -1,11 +1,12 @@
 import React from "react";
 import { StyledLayout } from "./Layout.styled";
 import { LayoutProps } from "./types";
+import { Navigation } from "../Navigation";
 
 export const Layout = ({ children }: LayoutProps) => {
   return (
     <StyledLayout>
-      <p>Hello from Layout</p>
+      <Navigation />
       {children}
     </StyledLayout>
   );
