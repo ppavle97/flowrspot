@@ -1,13 +1,9 @@
-import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
+import { Home } from "./pages";
+import Router from "./router";
 
 function App() {
-  return (
-    <div className="App">
-      <p>Hello From FlowerSpot</p>
-    </div>
-  );
+  return <Router />;
 }
 
 export default App;
