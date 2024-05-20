@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../store";
 import { SingUpModal } from "./SingUpModal";
 import { ProfileModal } from "./ProfileModal";
+import { SuccessSingUp } from "./SuccessSingUp";
 
 export const ModalContainer = () => {
   const modalType = useSelector((state: RootState) => state.modal.modalType);
@@ -17,6 +18,9 @@ export const ModalContainer = () => {
       return <SingUpModal />;
     case "profile":
       return <ProfileModal />;
+    case "success_singup":
+      return <SuccessSingUp />;
+
     default:
       return null;
   }

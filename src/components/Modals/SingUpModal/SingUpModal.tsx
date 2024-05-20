@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ModalLayout } from "../ModalLayout";
 import {
   StyledError,
@@ -10,6 +10,9 @@ import {
 import { ModalInput } from "../ModalInput";
 import { validateSignUpFields } from "./validation";
 import { formatDate } from "./helpers";
+import { signupUser } from "../../../store/features/user/userActions";
+import { useAppDispatch, useAppSelector } from "../../../store/hooks";
+import { setModal } from "../../../store/features/modal/modalSlice";
 
 export const SingUpModal = () => {
   const [firstName, setFirstName] = useState("");
@@ -17,7 +20,10 @@ export const SingUpModal = () => {
   const [dateOfBirth, setDateOfBirth] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [inputError, setInputError] = useState("");
+  const dispatch = useAppDispatch();
+  const error = useAppSelector((state) => state.user.error);
+  const user = useAppSelector((state) => state.user.user);
 
   const onSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -29,20 +35,24 @@ export const SingUpModal = () => {
       password
     );
     if (validationError) {
-      setError(validationError);
+      setInputError(validationError);
     } else {
       const formattedDate = formatDate(dateOfBirth);
-      console.log("Data");
-      console.log({
-        firstName,
-        lastName,
-        dateOfBirth: formattedDate,
-        email,
-        password,
-      });
-      // signup logic
+      dispatch(
+        signupUser({
+          email: email,
+          password: password,
+          first_name: firstName,
+          last_name: lastName,
+          date_of_birth: formattedDate,
+        })
+      );
     }
   };
+
+  useEffect(() => {
+    if (user) dispatch(setModal("success_singup"));
+  }, [user]);
 
   return (
     <ModalLayout closeText="I don't want to register">
@@ -88,6 +98,7 @@ export const SingUpModal = () => {
           label="Password"
           type="password"
         />
+        {inputError && <StyledError>{inputError}</StyledError>}
         {error && <StyledError>{error}</StyledError>}
 
         <StyledModalSubmit onClick={onSubmit}>Create Account</StyledModalSubmit>

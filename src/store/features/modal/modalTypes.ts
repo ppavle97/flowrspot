@@ -1,4 +1,9 @@
-export type ModalType = 'login' | 'signup' | 'profile' | null;
+export type ModalType =
+  | "login"
+  | "signup"
+  | "profile"
+  | "success_singup"
+  | null;
 
 export interface ModalState {
   modalType: ModalType;

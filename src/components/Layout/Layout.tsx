@@ -8,7 +8,7 @@ export const Layout = ({ children }: LayoutProps) => {
   return (
     <StyledLayout>
       <Navigation />
-      {/* {children} */}
+      {children}
       <ModalContainer />
     </StyledLayout>
   );
