@@ -50,10 +50,6 @@ export const SingUpModal = () => {
     }
   };
 
-  useEffect(() => {
-    if (user) dispatch(setModal("success_singup"));
-  }, [user]);
-
   return (
     <ModalLayout closeText="I don't want to register">
       <StyledModalHeading>Create an Account</StyledModalHeading>

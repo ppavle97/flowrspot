@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ModalState, ModalType } from "./modalTypes";
 
 const initialState: ModalState = {
-  modalType: "success_singup",
+  modalType: null,
 };
 
 const modalSlice = createSlice({
