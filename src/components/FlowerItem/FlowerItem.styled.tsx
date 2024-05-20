@@ -3,24 +3,62 @@ import { StyledFlowerItemProps } from "./types";
 import { breakpointMax, calcRem, colors } from "../../theme";
 
 export const StyledFlowerItem = styled("div")<StyledFlowerItemProps>(
-  ({ favourite, backgroundImg }) => [
+  ({ favourite, profile_picture }) => [
     {
-      backgroundImage: `url(${backgroundImg})`,
+      backgroundImage: `url(${profile_picture})`,
       backgroundSize: "cover",
       backgroundPosition: "bottom",
       textAlign: "center",
       boxSizing: "border-box",
       height: calcRem(400),
+      position: "relative",
+      display: "flex",
+      alignItems: "flex-end",
+      justifyContent: "center",
+
       [breakpointMax("md")]: {
         height: calcRem(300),
       },
       [breakpointMax("sm")]: {
         height: calcRem(230),
       },
-      display: "flex",
-      alignItems: "flex-end",
-      justifyContent: "center",
 
+      "& .favourite": {
+        width: calcRem(40),
+        height: calcRem(40),
+        backgroundColor: favourite ? colors.lightCoral : colors.white,
+        borderRadius: "100px",
+        position: "absolute",
+        top: calcRem(20),
+        right: calcRem(20),
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        "&:hover": { cursor: "pointer" },
+
+        [breakpointMax("md")]: {
+          width: calcRem(30),
+          height: calcRem(30),
+          top: calcRem(15),
+          right: calcRem(15),
+        },
+        [breakpointMax("sm")]: {
+          width: calcRem(25),
+          height: calcRem(25),
+          top: calcRem(10),
+          right: calcRem(10),
+        },
+
+        "& img": {
+          width: calcRem(20),
+          [breakpointMax("md")]: {
+            width: calcRem(15),
+          },
+          [breakpointMax("sm")]: {
+            width: calcRem(12),
+          },
+        },
+      },
       "& .content": {
         paddingBottom: calcRem(10),
 
@@ -33,7 +71,7 @@ export const StyledFlowerItem = styled("div")<StyledFlowerItemProps>(
           },
         },
 
-        "& .description": {
+        "& .latin": {
           color: colors.white,
           fontSize: calcRem(12),
           fontStyle: "italic",

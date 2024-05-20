@@ -10,8 +10,8 @@ export const fetchFlowers = createAsyncThunk<
   { rejectValue: string }
 >("flowers/fetchFlowers", async (_, { rejectWithValue }) => {
   try {
-    const response = await axios.get<Flower[]>(`${API}/flowers`);
-    return response.data;
+    const response = await axios.get<{ flowers: Flower[] }>(`${API}/flowers`);
+    return response.data.flowers;
   } catch (error: any) {
     return rejectWithValue(
       error.response ? error.response.data.message : error.message

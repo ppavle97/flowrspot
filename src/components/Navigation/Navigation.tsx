@@ -8,6 +8,7 @@ import {
 import logo from "./assets/logo.svg";
 import hamburger from "./assets/hamburger.svg";
 import close from "./assets/close.svg";
+
 export const Navigation = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 

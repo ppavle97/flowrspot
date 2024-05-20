@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { breakpointMax, calcRem } from "../../theme";
+import { breakpointMax, calcRem, colors } from "../../theme";
 
 export const StyledFlowerList = styled("div")({
   minHeight: "50vh",
@@ -14,5 +14,16 @@ export const StyledFlowerList = styled("div")({
   },
   [breakpointMax("sm")]: {
     gridTemplateColumns: "repeat(2, 1fr)",
+  },
+
+  "& .loading": {
+    color: colors.cadetGray,
+    fontSize: calcRem(18),
+    textAlign: "center",
+  },
+  "& .error": {
+    color: colors.red,
+    fontSize: calcRem(18),
+    textAlign: "center",
   },
 });

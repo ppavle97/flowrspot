@@ -1,5 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { FlowerState } from "./flowerTypes";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { Flower, FlowerState } from "./flowerTypes";
 import { fetchFlowers } from "./flowerActions";
 
 const initialState: FlowerState = {
@@ -18,15 +18,20 @@ const flowerSlice = createSlice({
         state.loading = true;
         state.error = null;
       })
-      .addCase(fetchFlowers.fulfilled, (state, action) => {
-        state.loading = false;
-        state.flowers = action.payload;
-        state.error = null;
-      })
-      .addCase(fetchFlowers.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.payload ?? "Unknown error occurred";
-      });
+      .addCase(
+        fetchFlowers.fulfilled,
+        (state, action: PayloadAction<Flower[]>) => {
+          state.loading = false;
+          state.flowers = action.payload;
+        }
+      )
+      .addCase(
+        fetchFlowers.rejected,
+        (state, action: PayloadAction<string | undefined>) => {
+          state.loading = false;
+          state.error = action.payload ?? "Unknown error occurred";
+        }
+      );
   },
 });
 
