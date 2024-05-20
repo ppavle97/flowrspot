@@ -4,5 +4,6 @@ export const colors = {
   cadetGray: "#949EA0", // Silver
   lightGray: "#DFE5EA", // Light Silver
   gunmetal: "#334144", // Black
-  red: "red", // Black
+  red: "red", // red
+  paleGray:"#F5F6F7"
 };
