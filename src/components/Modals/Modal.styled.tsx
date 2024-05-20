@@ -11,13 +11,25 @@ export const StyledModalLayout = styled("div")({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
+  flexDirection: "column",
 
   "& .content": {
     width: calcRem(440),
     minHeight: calcRem(200),
     background: colors.white,
     borderRadius: calcRem(10),
-    padding:calcRem(30),
+    padding: calcRem(30),
     boxSizing: "border-box",
+  },
+  "& .close-btn": {
+    background: "none",
+    border: "none",
+    color: colors.white,
+    opacity: 0.5,
+    marginTop: calcRem(15),
+    fontSize: calcRem(13),
+    "&:hover":{
+      cursor:'pointer'
+    }
   },
 });

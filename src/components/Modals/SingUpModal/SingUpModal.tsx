@@ -3,7 +3,7 @@ import { ModalLayout } from "../ModalLayout";
 
 export const SingUpModal = () => {
   return (
-    <ModalLayout>
+    <ModalLayout closeText="I don't want to register">
       <p>Hello from Sing Up modal</p>
     </ModalLayout>
   );
