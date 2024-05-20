@@ -11,7 +11,7 @@ export const StyledNavigation = styled("div")<StyledNavigationProps>(
     {
       display: "flex",
       justifyContent: "space-between",
-      padding: `${calcRem(0)} ${calcRem(30)} `,
+      padding: `${calcRem(20)} ${calcRem(30)} `,
       fontFamily: "Montserrat",
       boxSizing: "border-box",
 
@@ -42,7 +42,7 @@ export const StyledNavigation = styled("div")<StyledNavigationProps>(
     },
   ]
 );
-export const StyledMenu = styled("p")<StyledMenuProps>(({ menuOpen }) => [
+export const StyledMenu = styled("div")<StyledMenuProps>(({ menuOpen }) => [
   {
     display: "flex",
     [breakpointMax("lg")]: {
@@ -68,14 +68,14 @@ export const StyledMenuItem = styled("p")({
   },
 });
 
-export const StyledMenuButton = styled("p")<StyledMenuButtonProps>(
+export const StyledMenuButton = styled("button")<StyledMenuButtonProps>(
   ({ login }) => [
     {
       margin: `auto ${calcRem(20)}`,
       fontSize: calcRem(14),
       fontWeight: "500",
       color: login ? colors.lightCoral : colors.white,
-      backgroundColor: login ? "none" : colors.lightCoral,
+      backgroundColor: login ? "transparent" : colors.lightCoral,
       padding: login ? "none" : `${calcRem(10)} ${calcRem(20)}`,
       border: "none",
       borderRadius: "100px",
