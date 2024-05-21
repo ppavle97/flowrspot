@@ -20,7 +20,11 @@ export const FlowerItem = (props: FlowerItemProps) => {
   return (
     <StyledFlowerItem profile_picture={profile_picture} favourite={favourite}>
       {isLoggedIn && (
-        <div className="favourite" onClick={onFavouriteClick}>
+        <div
+          data-testid="favourite"
+          className="favourite"
+          onClick={onFavouriteClick}
+        >
           <img
             src={favourite ? whiteStar : silverStar}
             alt="FlowrSpot Favourite flower"
