@@ -25,9 +25,7 @@ export const ProfileModal = () => {
     dispatch(setModal(null));
   };
 
-  useEffect(() => {
-    dispatch(fetchCurrentUser());
-  }, [dispatch]);
+
 
   return (
     <ModalLayout size="big">
