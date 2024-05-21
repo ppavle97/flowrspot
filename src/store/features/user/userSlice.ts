@@ -1,19 +1,13 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import {
-  LoggedUser,
-  SignupData,
-  User,
-  UserLogin,
-  UserState,
-} from "./userTypes";
+import { LoggedUser, User, UserState } from "./userTypes";
 import { fetchCurrentUser, loginUser, signupUser } from "./userActions";
-import { removeCookie } from "../../cookies";
+import { removeCookie, getCookie } from "../../cookies";
 
 const initialState: UserState = {
   user: null,
   loading: false,
   error: null,
-  isLoggedIn: false,
+  isLoggedIn: !!getCookie("jwtToken"),
 };
 
 const userSlice = createSlice({

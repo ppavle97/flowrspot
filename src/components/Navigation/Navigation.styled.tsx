@@ -89,3 +89,20 @@ export const StyledMenuButton = styled("button")<StyledMenuButtonProps>(
     },
   ]
 );
+
+export const StyledMenuUser = styled("div")({
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  "&:hover": {
+    cursor: "pointer",
+  },
+  "& p": {
+    fontSize: calcRem(13),
+    color: colors.gunmetal,
+  },
+  "& img": {
+    width: calcRem(40),
+    marginLeft: calcRem(20),
+  },
+});
