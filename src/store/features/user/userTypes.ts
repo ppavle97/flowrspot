@@ -4,10 +4,17 @@ export interface User {
   last_name: string;
   date_of_birth: string;
   password: string;
+  id: number;
 }
+
 export interface UserLogin {
   auth_token: string;
+}
 
+export interface LoggedUser {
+  first_name: string;
+  last_name: string;
+  id: number;
 }
 
 export interface SignupData {
@@ -19,11 +26,12 @@ export interface SignupData {
 }
 
 export interface UserState {
-  user: User | null;
+  user: LoggedUser | null;
   loading: boolean;
   error: string | null;
   isLoggedIn: boolean;
 }
+
 export interface LoginData {
   email: string;
   password: string;
