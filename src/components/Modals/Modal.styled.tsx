@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { calcRem, colors } from "../../theme";
+import {  calcRem, colors } from "../../theme";
 import { StyledModalLayoutProps } from "./ModalLayout/types";
 
 export const StyledModalLayout = styled("div")<StyledModalLayoutProps>(
@@ -15,9 +15,10 @@ export const StyledModalLayout = styled("div")<StyledModalLayoutProps>(
       justifyContent: "center",
       alignItems: "center",
       flexDirection: "column",
+      zIndex: 11,
 
       "& .content": {
-        width: size == "big" ? calcRem(600) : calcRem(440),
+        width: size === "big" ? calcRem(600) : calcRem(440),
         minHeight: calcRem(200),
         background: colors.white,
         borderRadius: calcRem(10),

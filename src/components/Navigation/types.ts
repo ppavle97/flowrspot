@@ -1,7 +1,3 @@
-export interface StyledMenuButtonProps {
-  login?: boolean;
-}
-
 export interface StyledMenuProps {
   menuOpen?: boolean;
 }

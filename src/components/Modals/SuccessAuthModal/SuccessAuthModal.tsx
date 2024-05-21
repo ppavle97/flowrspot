@@ -23,7 +23,7 @@ export const SuccessAuthModal = ({
         {description}
       </StyledModalSuccessDescription>
 
-      {type == "singup" ? (
+      {type === "singup" ? (
         <StyledModalSuccessBtn onClick={() => dispatch(setModal(null))}>
           OK
         </StyledModalSuccessBtn>

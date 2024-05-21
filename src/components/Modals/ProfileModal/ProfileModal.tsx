@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { ModalLayout } from "../ModalLayout";
 import {
   StyledProfileBtn,
@@ -12,7 +12,6 @@ import closeIcon from "./assets/close-icon.svg";
 import { setModal } from "../../../store/features/modal/modalSlice";
 import { logout } from "../../../store/features/user/userSlice";
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
-import { fetchCurrentUser } from "../../../store/features/user/userActions";
 
 export const ProfileModal = () => {
   const dispatch = useAppDispatch();
@@ -24,8 +23,6 @@ export const ProfileModal = () => {
     dispatch(logout());
     dispatch(setModal(null));
   };
-
-
 
   return (
     <ModalLayout size="big">

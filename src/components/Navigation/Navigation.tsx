@@ -36,9 +36,13 @@ export const Navigation = () => {
           </StyledMenuUser>
         ) : (
           <>
-            <StyledMenuButton onClick={() => dispatch(setModal("login"))} login>
+            <StyledMenuItem
+              className="login"
+              onClick={() => dispatch(setModal("login"))}
+            >
               Login
-            </StyledMenuButton>
+            </StyledMenuItem>
+
             <StyledMenuButton onClick={() => dispatch(setModal("signup"))}>
               New Account
             </StyledMenuButton>
@@ -49,7 +53,7 @@ export const Navigation = () => {
         src={menuOpen ? close : hamburger}
         onClick={() => setMenuOpen(!menuOpen)}
         alt="FlowerSpot Menu"
-        className="hamburger-menu"
+        className="menu-toggler"
       />
     </StyledNavigation>
   );

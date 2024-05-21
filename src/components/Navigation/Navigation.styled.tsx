@@ -1,10 +1,6 @@
 import styled from "@emotion/styled";
 import { breakpointMax, calcRem, colors } from "../../theme";
-import {
-  StyledMenuButtonProps,
-  StyledMenuProps,
-  StyledNavigationProps,
-} from "./types";
+import { StyledMenuProps, StyledNavigationProps } from "./types";
 
 export const StyledNavigation = styled("div")<StyledNavigationProps>(
   ({ menuOpen }) => [
@@ -14,8 +10,8 @@ export const StyledNavigation = styled("div")<StyledNavigationProps>(
       padding: `${calcRem(20)} ${calcRem(30)} `,
       fontFamily: "Montserrat",
       boxSizing: "border-box",
-
-      [breakpointMax("lg")]: {
+      zIndex: 10,
+      [breakpointMax("md")]: {
         height: menuOpen ? "100vh" : "",
         width: "100%",
         position: menuOpen ? "fixed" : "relative",
@@ -27,16 +23,19 @@ export const StyledNavigation = styled("div")<StyledNavigationProps>(
       "& .navigation-logo": {
         height: calcRem(30),
         margin: "auto 0",
-        [breakpointMax("lg")]: {
+        [breakpointMax("md")]: {
           margin: "0",
         },
       },
-      "& .hamburger-menu": {
+      "& .menu-toggler": {
         display: "none",
         width: calcRem(30),
         height: calcRem(30),
-        [breakpointMax("lg")]: {
+        [breakpointMax("md")]: {
           display: "block",
+        },
+        "&:hover": {
+          cursor: "pointer",
         },
       },
     },
@@ -45,7 +44,7 @@ export const StyledNavigation = styled("div")<StyledNavigationProps>(
 export const StyledMenu = styled("div")<StyledMenuProps>(({ menuOpen }) => [
   {
     display: "flex",
-    [breakpointMax("lg")]: {
+    [breakpointMax("md")]: {
       display: menuOpen ? "flex" : "none",
       position: "absolute",
       left: 0,
@@ -63,37 +62,43 @@ export const StyledMenuItem = styled("p")({
   color: colors.gunmetal,
   fontSize: calcRem(14),
   fontWeight: "500",
-  [breakpointMax("lg")]: {
+  [breakpointMax("md")]: {
     margin: `${calcRem(20)} ${calcRem(20)}`,
+  },
+
+  "&.login": {
+    color: colors.lightCoral,
+    fontWeight: "500",
+    "&:hover": {
+      cursor: "pointer",
+    },
+  },
+});
+export const StyledMenuButton = styled("p")({
+  margin: `auto ${calcRem(20)}`,
+  fontSize: calcRem(14),
+  fontWeight: "500",
+  color: colors.white,
+  backgroundColor: colors.lightCoral,
+  padding: `${calcRem(10)} ${calcRem(20)}`,
+  border: "none",
+  borderRadius: "100px",
+  "&:hover": {
+    cursor: "pointer",
+  },
+  [breakpointMax("md")]: {
+    margin: `${calcRem(20)} ${calcRem(20)}`,
+    maxWidth: calcRem(100),
+    padding: `${calcRem(15)} ${calcRem(20)}`,
   },
 });
 
-export const StyledMenuButton = styled("button")<StyledMenuButtonProps>(
-  ({ login }) => [
-    {
-      margin: `auto ${calcRem(20)}`,
-      fontSize: calcRem(14),
-      fontWeight: "500",
-      color: login ? colors.lightCoral : colors.white,
-      backgroundColor: login ? "transparent" : colors.lightCoral,
-      padding: login ? "none" : `${calcRem(10)} ${calcRem(20)}`,
-      border: "none",
-      borderRadius: "100px",
-      "&:hover": {
-        cursor: "pointer",
-      },
-      [breakpointMax("lg")]: {
-        margin: `${calcRem(20)} ${calcRem(20)}`,
-        maxWidth: calcRem(100),
-      },
-    },
-  ]
-);
-
 export const StyledMenuUser = styled("div")({
   display: "flex",
-  justifyContent: "center",
   alignItems: "center",
+  [breakpointMax("md")]: {
+    margin: `${calcRem(0)} ${calcRem(20)}`,
+  },
   "&:hover": {
     cursor: "pointer",
   },
