@@ -11,8 +11,14 @@ import profileHolder from "./assets/profile-holder.svg";
 import closeIcon from "./assets/close-icon.svg";
 import { useDispatch } from "react-redux";
 import { setModal } from "../../../store/features/modal/modalSlice";
+import { logout } from "../../../store/features/user/userSlice";
 export const ProfileModal = () => {
   const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch(logout());
+    dispatch(setModal(null));
+  };
 
   return (
     <ModalLayout size="big">
@@ -49,9 +55,7 @@ export const ProfileModal = () => {
           </StyledProfileInfoItem>
         </StyledProfileInfo>
 
-        <StyledProfileBtn onClick={() => alert("Logout")}>
-          Logout
-        </StyledProfileBtn>
+        <StyledProfileBtn onClick={handleLogout}>Logout</StyledProfileBtn>
       </StyledProfileContainer>
     </ModalLayout>
   );

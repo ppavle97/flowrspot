@@ -5,6 +5,10 @@ export interface User {
   date_of_birth: string;
   password: string;
 }
+export interface UserLogin {
+  auth_token: string;
+
+}
 
 export interface SignupData {
   email: string;
@@ -18,6 +22,7 @@ export interface UserState {
   user: User | null;
   loading: boolean;
   error: string | null;
+  isLoggedIn: boolean;
 }
 export interface LoginData {
   email: string;
