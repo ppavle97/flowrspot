@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { ModalLayout } from "../ModalLayout";
 import {
   StyledError,
@@ -12,7 +12,6 @@ import { validateSignUpFields } from "./validation";
 import { formatDate } from "./helpers";
 import { signupUser } from "../../../store/features/user/userActions";
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
-import { setModal } from "../../../store/features/modal/modalSlice";
 
 export const SingUpModal = () => {
   const [firstName, setFirstName] = useState("");
@@ -23,7 +22,6 @@ export const SingUpModal = () => {
   const [inputError, setInputError] = useState("");
   const dispatch = useAppDispatch();
   const error = useAppSelector((state) => state.user.error);
-  const user = useAppSelector((state) => state.user.user);
 
   const onSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();

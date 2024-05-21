@@ -3,6 +3,7 @@ export type ModalType =
   | "signup"
   | "profile"
   | "success_singup"
+  | "success_login"
   | null;
 
 export interface ModalState {

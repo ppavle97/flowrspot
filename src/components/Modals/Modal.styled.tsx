@@ -107,6 +107,10 @@ export const StyledModalSuccessDescription = styled("p")({
   margin: `${calcRem(12)} auto`,
 });
 
+export const StyledModalSuccessBtnContainer = styled("div")({
+  display: "flex",
+  gap: calcRem(15),
+});
 export const StyledModalSuccessBtn = styled("button")({
   color: colors.white,
   backgroundColor: colors.lightCoral,

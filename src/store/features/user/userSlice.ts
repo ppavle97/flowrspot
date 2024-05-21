@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { SignupData, User, UserState } from "./userTypes";
-import { signupUser } from "./userActions";
+import { loginUser, signupUser } from "./userActions";
 
 const initialState: UserState = {
   user: null,
@@ -24,7 +24,23 @@ const userSlice = createSlice({
       })
       .addCase(signupUser.rejected, (state, action) => {
         state.loading = false;
-        state.error = String(action.payload) ?? "Unknown error occurred";
+        state.error = action.payload
+          ? String(action.payload)
+          : "Unknown error occurred";
+      })
+      .addCase(loginUser.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(loginUser.fulfilled, (state, action: PayloadAction<User>) => {
+        state.loading = false;
+        state.user = action.payload;
+      })
+      .addCase(loginUser.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload
+          ? String(action.payload)
+          : "Unknown error occurred";
       });
   },
 });

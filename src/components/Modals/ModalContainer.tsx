@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../store";
 import { SingUpModal } from "./SingUpModal";
 import { ProfileModal } from "./ProfileModal";
-import { SuccessSingUp } from "./SuccessSingUp";
+import { SuccessAuthModal } from "./SuccessAuthModal";
 
 export const ModalContainer = () => {
   const modalType = useSelector((state: RootState) => state.modal.modalType);
@@ -19,7 +19,19 @@ export const ModalContainer = () => {
     case "profile":
       return <ProfileModal />;
     case "success_singup":
-      return <SuccessSingUp />;
+      return (
+        <SuccessAuthModal
+          description="You have successfully signed up for FlowrSpot!"
+          type="singup"
+        />
+      );
+    case "success_login":
+      return (
+        <SuccessAuthModal
+          description="You have successfully logged into FlowrSpot!"
+          type="login"
+        />
+      );
 
     default:
       return null;
