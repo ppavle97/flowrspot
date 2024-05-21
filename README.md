@@ -1,46 +1,66 @@
-# Getting Started with Create React App
+# FlowrSpot Povio - React Assignment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to our FlowrSpot Povio! This project showcases the power and flexibility of React for building modern web applications with purpose for flower spotting while hiking, traveling, etc. Users can check out different flowers, their details and sightings, as well as add their sightings.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Component-based Architecture:** Utilizes React's component-based architecture for building reusable UI elements.
+- **State Management with Redux:** Implements Redux for managing application state in a predictable and centralized manner.
+- **Routing with React Router:** Utilizes React Router for handling navigation and routing between different views.
+- **Responsive Design:** Ensures the application is fully responsive and works seamlessly across various devices and screen sizes.
+- **API Integration:** Demonstrates how to integrate with external APIs to fetch and display data dynamically.
+- **Authentication:** Implements user authentication using JWT tokens and secure routes to protect sensitive information.
+- **Form Handling:** Illustrates best practices for form handling and validation.
+- **CSS Modules:** Utilizes CSS Modules for scoped styling, preventing style conflicts and improving maintainability.
+- **Unit Testing:** Includes unit tests using Jest to ensure code quality and reliability.
+- **Snapshot Testing:** Includes snapshot tests using Jest to ensure code quality and reliability.
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Follow these steps to get the project up and running on your local machine:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. Clone the repository:
 
-### `npm test`
+   ```bash
+   git clone https://github.com/*************
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Navigate into the project directory:
 
-### `npm run build`
+   ```bash
+   cd flowrspot
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Install dependencies:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```bash
+   npm install
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. Start the development server:
 
-### `npm run eject`
+   ```bash
+   npm start
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+5. Open your browser and visit `http://localhost:3000` to view the application.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Project Structure
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+flowrspot/
+├── src/
+│   ├── components/        # Reusable UI components
+│   ├── pages/             # Higher-level components or "pages"
+│   ├── router/            # Routing system using react-router-dom
+│   ├── store/             # Redux setup, actions, reducers devided inside features
+│   ├── theme/             # Global config for App theme (breakpoints, colors, fonts, etc.)
+│   ├── App.js             # Main application component
+│   └── index.js           # Entry point
+├── public/                 # Public assets and HTML template
+└── README.md               # Project documentation
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## License
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project is licensed under the Povio License
