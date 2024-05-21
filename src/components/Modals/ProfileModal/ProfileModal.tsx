@@ -9,15 +9,13 @@ import {
 } from "../Modal.styled";
 import profileHolder from "./assets/profile-holder.svg";
 import closeIcon from "./assets/close-icon.svg";
-import { useDispatch } from "react-redux";
 import { setModal } from "../../../store/features/modal/modalSlice";
 import { logout } from "../../../store/features/user/userSlice";
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { fetchCurrentUser } from "../../../store/features/user/userActions";
 
 export const ProfileModal = () => {
-  const dispatch = useDispatch();
-  const asyncDispatch = useAppDispatch();
+  const dispatch = useAppDispatch();
   const user = useAppSelector((state) => state.user.user);
   const error = useAppSelector((state) => state.user.error);
   const loading = useAppSelector((state) => state.user.loading);
@@ -28,8 +26,8 @@ export const ProfileModal = () => {
   };
 
   useEffect(() => {
-    asyncDispatch(fetchCurrentUser());
-  }, [asyncDispatch]);
+    dispatch(fetchCurrentUser());
+  }, [dispatch]);
 
   return (
     <ModalLayout size="big">

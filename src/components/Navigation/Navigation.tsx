@@ -9,16 +9,14 @@ import {
 import logo from "./assets/logo.svg";
 import hamburger from "./assets/hamburger.svg";
 import close from "./assets/close.svg";
-import { useDispatch, useSelector } from "react-redux";
 import { setModal } from "../../store/features/modal/modalSlice";
-import { RootState } from "../../store";
 import profileHolder from "./assets/profile-holder.svg";
-import { useAppSelector } from "../../store/hooks";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
 
 export const Navigation = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const dispatch = useDispatch();
-  const isLoggedIn = useSelector((state: RootState) => state.user.isLoggedIn);
+  const dispatch = useAppDispatch();
+  const isLoggedIn = useAppSelector((state) => state.user.isLoggedIn);
   const user = useAppSelector((state) => state.user.user);
 
   return (

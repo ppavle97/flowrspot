@@ -3,8 +3,7 @@ import { FlowerItemProps } from "./types";
 
 import whiteStar from "./assets/whiteStar.svg";
 import silverStar from "./assets/silverStar.svg";
-import { useSelector } from "react-redux";
-import { RootState } from "../../store";
+import { useAppSelector } from "../../store/hooks";
 
 export const FlowerItem = (props: FlowerItemProps) => {
   const {
@@ -16,7 +15,7 @@ export const FlowerItem = (props: FlowerItemProps) => {
     onFavouriteClick,
   } = props;
 
-  const isLoggedIn = useSelector((state: RootState) => state.user.isLoggedIn);
+  const isLoggedIn = useAppSelector((state) => state.user.isLoggedIn);
 
   return (
     <StyledFlowerItem profile_picture={profile_picture} favourite={favourite}>

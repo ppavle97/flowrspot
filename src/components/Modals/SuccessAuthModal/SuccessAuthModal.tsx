@@ -6,15 +6,15 @@ import {
   StyledModalSuccessDescription,
   StyledModalSuccessHeading,
 } from "../Modal.styled";
-import { useDispatch } from "react-redux";
 import { setModal } from "../../../store/features/modal/modalSlice";
 import { SuccessAuthModalProps } from "./types";
+import { useAppDispatch } from "../../../store/hooks";
 
 export const SuccessAuthModal = ({
   description,
   type,
 }: SuccessAuthModalProps) => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   return (
     <ModalLayout>

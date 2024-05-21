@@ -1,13 +1,12 @@
 import React from "react";
 import { LoginModal } from "./LoginModal";
-import { useSelector } from "react-redux";
-import { RootState } from "../../store";
 import { SingUpModal } from "./SingUpModal";
 import { ProfileModal } from "./ProfileModal";
 import { SuccessAuthModal } from "./SuccessAuthModal";
+import { useAppSelector } from "../../store/hooks";
 
 export const ModalContainer = () => {
-  const modalType = useSelector((state: RootState) => state.modal.modalType);
+  const modalType = useAppSelector((state) => state.modal.modalType);
 
   if (!modalType) return null;
 

@@ -1,15 +1,15 @@
 import React from "react";
 import { ModalLayoutProps } from "./types";
 import { StyledModalLayout } from "../Modal.styled";
-import { useDispatch } from "react-redux";
 import { setModal } from "../../../store/features/modal/modalSlice";
+import { useAppDispatch } from "../../../store/hooks";
 
 export const ModalLayout = ({
   children,
   closeText,
   size,
 }: ModalLayoutProps) => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   return (
     <StyledModalLayout size={size}>
