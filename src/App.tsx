@@ -1,6 +1,5 @@
 import { Provider } from "react-redux";
 import "./App.css";
-import { Home } from "./pages";
 import Router from "./router";
 import store from "./store";
 
