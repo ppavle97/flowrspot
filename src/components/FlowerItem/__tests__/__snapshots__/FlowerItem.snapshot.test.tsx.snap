@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FlowerItem component snapshot test matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="css-1nnb2kx"
+  >
+    <div
+      class="favourite"
+      data-testid="favourite"
+    >
+      <img
+        alt="FlowrSpot Favourite flower"
+        src="silverStar.svg"
+      />
+    </div>
+    <div
+      class="content"
+    >
+      <h3>
+        Rose
+      </h3>
+      <p
+        class="latin"
+      >
+        Latin Name
+      </p>
+      <p
+        class="sightings"
+      >
+        10
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;
